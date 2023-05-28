@@ -25,12 +25,6 @@ jobs:
         role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
         aws-region: eu-central-1
 
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-        aws-region: eu-central-1
-
     - name: Build and push Docker image
       id: docker-build
       uses: docker/build-push-action@v2
